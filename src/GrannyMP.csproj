@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AssemblyName>GrannyMP</AssemblyName>
+    <RootNamespace>GrannyMP</RootNamespace>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <GameDirectory Condition="'$(GameDirectory)' == ''">$(GRANNY_GAME_DIR)</GameDirectory>
+    <NoWarn>CS0618;CS8632</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="LiteNetLib" Version="1.3.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="art\*.bin" LogicalName="%(Filename)%(Extension)" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="$(GameDirectory)\BepInEx\core\BepInEx.Core.dll" Private="false" />
+    <Reference Include="$(GameDirectory)\BepInEx\core\BepInEx.Unity.IL2CPP.dll" Private="false" />
+    <Reference Include="$(GameDirectory)\BepInEx\core\BepInEx.Unity.Common.dll" Private="false" />
+    <Reference Include="$(GameDirectory)\BepInEx\core\Il2CppInterop.Runtime.dll" Private="false" />
+    <Reference Include="$(GameDirectory)\BepInEx\core\Il2CppInterop.Common.dll" Private="false" />
+    <Reference Include="$(GameDirectory)\BepInEx\core\0Harmony.dll" Private="false" />
+    <Reference Include="$(GameDirectory)\BepInEx\interop\Il2Cppmscorlib.dll" Private="false" />
+    <Reference Include="$(GameDirectory)\BepInEx\interop\Assembly-CSharp.dll" Private="false" />
+    <Reference Include="$(GameDirectory)\BepInEx\interop\Assembly-CSharp-firstpass.dll" Private="false" />
+    <Reference Include="$(GameDirectory)\BepInEx\interop\UnityEngine.CoreModule.dll" Private="false" />
+    <Reference Include="$(GameDirectory)\BepInEx\interop\UnityEngine.PhysicsModule.dll" Private="false" />
+    <Reference Include="$(GameDirectory)\BepInEx\interop\UnityEngine.AnimationModule.dll" Private="false" />
+    <Reference Include="$(GameDirectory)\BepInEx\interop\UnityEngine.AIModule.dll" Private="false" />
+    <Reference Include="$(GameDirectory)\BepInEx\interop\UnityEngine.IMGUIModule.dll" Private="false" />
+    <Reference Include="$(GameDirectory)\BepInEx\interop\UnityEngine.InputLegacyModule.dll" Private="false" />
+    <Reference Include="$(GameDirectory)\BepInEx\interop\UnityEngine.AudioModule.dll" Private="false" />
+    <Reference Include="$(GameDirectory)\BepInEx\interop\UnityEngine.TextRenderingModule.dll" Private="false" />
+    <Reference Include="$(GameDirectory)\BepInEx\interop\UnityEngine.UI.dll" Private="false" />
+    <Reference Include="$(GameDirectory)\BepInEx\interop\UnityEngine.UIModule.dll" Private="false" />
+  </ItemGroup>
+</Project>

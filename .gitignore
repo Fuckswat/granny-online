@@ -1,0 +1,16 @@
+
+.env
+.env.*
+!.env.example
+config.json
+*.db
+*.sqlite*
+*.session
+*.log
+__pycache__/
+.venv/
+venv/
+bin/
+obj/
+output/
+tmp/
